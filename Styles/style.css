@@ -33,7 +33,7 @@ html {
 
 
 body {
-    background-color: #000000;
+    background-color: #a52424;
     color: #f6f6f6; 
     box-sizing: border-box;
     align-items: center;
@@ -223,6 +223,7 @@ body {
         /*pero si la bajasemos a 0, el ancho de todos los perfiles con ancho, se vuelven 0 y desaparecen, por eso es mejor declararlo o 
         colocarlo en auto. */
     }
+
 
 
 
