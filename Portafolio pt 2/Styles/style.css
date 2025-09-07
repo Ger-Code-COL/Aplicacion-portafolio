@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/*---------------------------------------------------------------------------declaraciones------------------------------------------------------*/
+
+
+/*Declaracion de variables!! como vemos que repetimos muchos datos, podemos declarar una variable con una palabra clave para cambiar ciertas cosas de golpe de todo
+el codigo de quererlo, como los colores o las fuentes y se declara de la siguiente manera al inicio del archivo*/
+:root {
+
+    --nombredelavariable : valor de la variable;
+    --Ejemplodecolor : #fdfdfd;
+    --Ejemplodefuente : "Montserrat", sans-serif
+/* y cuando se llamen se usa el la denotacion var(--nombredelabariable); para reemplazar el valor discreto*/
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    /*estos atributos se refieren a la vision decaja en la inspeccion de elementos en el navegador, el * nos permite referirnos a todo
+    el archivo en si, o al proyecto en la vision de caja esto, esto lo hacemos para mover la forma en la imagen, pero el estandar de 
+    reset hace esto para todas los navegadores, es por eso que declara muchos selectores*/;
+}
+
+html {
+    font-size: 16
+    /*Ambas esta y la eclaracion inicial con asterisco toman todo el documento, y el tamaño de base de un docuemnto html es 16, para cambiarlo, 
+    se declara el selector html comoa qui o, como ya dije, con el "*" */ 
+}
+
+
+
+body {
+    background-color: #000000;
+    color: #f6f6f6; 
+    box-sizing: border-box;
+    align-items: center;
+}
+
+/*-------------------------------------------------------------------------------Header---------------------------------------------------------*/
+.header {
+    padding: 2% 0% 0% 15%; /*el orden de estos valores es arriba, derecha, abajo, e izquierda, el 15% viene de querer alinear el header con
+                                el 15% del margin del body en la presentacion, SIN EMBARGO, si se usa solo un elemento, se generaliza el valor 
+                                para todas las dimensiones, usando el ancho para el pocentaje, de colocar 2 valores, se asume valor 1 para 
+                                el alto y 2 para el ancho, y de usar 3 valores, los usos serian, primer valor, para el alto, el segundo para 
+                                el ancho (ambos derecha e izquierda) y el 3 ero para abajo imitando el array de 4 posiciones*/
+
+}
+
+.header_menu {
+    display: flex;
+    gap: 80px;
+    /*Este gap va aqui y no abajo por que toma como elementos a los 2 navs (home y sobre mi) y le apliga el gap a ellos, estando dentro de la 
+    class siguiente separaria los elementos dentro de cada uno (como el padding dentro de los botones o el gap con el texto y las imagenes de
+    los botones) pero como hay solo un elemento, no hace nada.*/
+}
+
+.header_menu_link {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #22D4FD;
+    
+}
+
+
+/*-------------------------------------------------------------------------------Main--------------------------------------------------------------*/
+
+                          /*----------------------------------------------------Texto -----------------------------------------*/
+
+/*Hay que pensar en estas clases como carpetas y como cada elemento del html esta nesteado en el siguiente, como la ruta a la "carpeta" que referimos*/
+.presentacion {
+    display: flex
+    /*Esta es la manera de llamar a flexbox, es importante para organizar sencillamente elementos dentro del frontend, con etiquetas y 
+    segmentos se puede segmentar para que haya una mezcla de diseño vertical y horizontal*/;
+    align-items: center;
+    
+    /*margin: 10% 15%; se cambia margin por padding, dado que margin crea un limite fuera del elemento que excluye otros elementos, y padding con el mismo 
+    valor crea un limite que solo aplica para el elemento propio*/
+    padding: 6% 15%;
+    gap: 10%;
+
+}
+
+
+.presentacion__contenido {
+      width: 50%;
+      display: flex;
+      /*El display natural del html es vertical pero el del flexbox es horizontal, al traer el flexbox
+      para configurar la aultura y la separacion de elementos tambien colocamos todo dentro de esta etiqueta 
+      en horizontal, para arreglarlo, debemos usar el colum descrito abajo */
+      flex-direction:column;
+      gap: 40px;
+
+}
+
+.titulo-destacado{
+    color: #22D4FD
+    /*la clase permite no tener que usar toda la etiqueta de Strong como selector, sino, como si fuera un ID para JS, 
+    referenciar un valor especifico dentro de un rango de elementos (una clase dentro de un selector general*/; 
+}
+
+
+.presentacion__contenido__Titulo {
+    font-size: 2.25rem; 
+    /* para hacer lo siguiente es necesario hacer la importacion de fuentes al inicio del documento preferiblemente de una libreria como google*/
+    font-family: "Krona One", sans-serif; 
+}
+/*Y mientras más iteramos, mas tenemos que especificar hasta detenernos o ramificar, como con el titulo y el texto*/
+
+.presentacion__contenido__Texto {
+    font-size: 1.5rem;
+    /* instalar varios paquetes de fuentes se puede hacer de golpe con un solo link de google fonts haciendo un carrito grande, aunque preferiria hacerlo por aparte para manutencion 
+    del codigo */
+    font-family: "Montserrat", sans-serif;
+}
+
+                             /*---------------------------------------------------Botones-----------------------------------------*/
+
+
+.presentacion__botones {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1%;
+    gap: 10px;
+    /*En el curso se trata mucho con pixeles, pero prefiero trabajar con porcentajes, para que el escalado sea aproximado al pixelaje total 
+    del dispositivo final y el resultado sea uniforme*/
+    /*haciendo un adendum, eso funciona si todo se escala en proporcion, pero por ejemplo, si la fuente se mantiene en cierto tamaño, para 
+    ser legible con la ventana alterada o doblada, los botones todo lo porcentual cambiara menos ello, incluido la multimedia, por eso se 
+    trabaja en pixeles*/  
+    flex-direction: column;
+    align-items: center;
+    /*Una vez se usa el flex direction se tiene un eje central en horizontal pero un redireccionamiento hacia donde quiera que se le haya pedido
+    al flex direction, por eso se debe utilizar el align items en luigar de "justify-content: center", preferiblemente siempre usar, aling items,
+    pues es mas general*/
+    gap: 32px;
+
+}
+
+.presentacion__botones__subtitulo {
+     font-family: "Krona One", sans-serif; 
+     font-size: 1.5rem;
+     font-weight: 400;
+
+
+
+}
+
+.presentacion__botones__links {
+    width: 50%;
+    text-align: center;
+    padding: 21.5px 0;
+    border-radius: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    /*esto es el grosor de la fuente, y el "peso" de cada una de ellas*/
+    text-decoration: none;
+    /*para quitar el subrayadao de los hipervinculos*/
+    color:#f6f6f6;
+    border: 2px solid #22D4FD;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px
+}
+
+.presentacion__botones__links:hover {
+    /*esto funciona para cambiar la apariencia caundo se pase por encima el raton sin hacer click de plano, como una animacion, y se estipula como una iteracion del 
+    grupo requerido*/
+    /*ESTO ES MUY UTIL PARA MENUS DE DROP DOWN, REVISAR DOCUMENTACION*/
+    background-color: #272727;
+}
+
+.presentacion__IMAGEN {
+    width: 50%;
+
+}
+
+/*-------------------------------------------------------------------------------Footer--------------------------------------------------------------*/
+
+.footer {
+    color: #000000;
+    background-color: #22D4FD;
+    padding: 24px;
+    text-align: center;
+    /*Se podría usar el justify-content center, pero como solo es texto, se puede centrar asi*/
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+
+}
+
+
+
+
+/*-----------------------------------------------------------------Adaptabilidad para diferentes dispositivos--------------------------------------------------------------*/
+
+@media (max-width: 1200px ) {
+    /*  Esta caracteristica aplica para solo para las cosas con menos resolucion que lo establecido, llamado media querie, con un breakpoint en este caso, menos que 1200 px de ancho*/
+    
+    .header {
+        display: flex;
+        justify-content: center;
+        padding: 10% 0% 0% 0%;
+        /*esto recentra el header con la navegacion*/
+    }
+    
+    .presentacion {
+        display: flex;
+        flex-direction:column-reverse;
+        gap: 80px;
+        padding: 5%
+        /*Al cambiar el padding solo no cambia nada por que el width de la caja interna (contenido) no se lo permite, hay que reducirla acontinuacion*/
+    }
+
+    .presentacion__contenido {
+        width: auto; 
+        
+        /*pero si la bajasemos a 0, el ancho de todos los perfiles con ancho, se vuelven 0 y desaparecen, por eso es mejor declararlo o 
+        colocarlo en auto. */
+    }
+
+
+
+}
